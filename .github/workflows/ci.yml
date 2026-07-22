@@ -7,4 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: chmod +x scripts/check.sh
+      - run: ./scripts/check.sh
       - run: echo "Pipeline works!"
