@@ -6,6 +6,8 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      - name: Build Docker image
+        run: docker build -t bem-app:${{ github.sha }} .
       - uses: actions/checkout@v4
       - run: chmod +x scripts/check.sh
       - run: ./scripts/check.sh
